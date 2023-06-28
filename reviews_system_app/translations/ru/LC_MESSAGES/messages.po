@@ -1,0 +1,206 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-06-18 19:58+0300\n"
+"PO-Revision-Date: 2023-06-18 19:58+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: forms.py:18
+msgid "Reviewer information"
+msgstr "Данные рецензента"
+
+#: forms.py:20
+msgid ""
+"Provide your information (in English if possible): full name, degree, "
+"title, affiliation, e-mail and address."
+msgstr "Укажите свои данные (по возможности, на английском языке): полное ФИО, степень, звание, аффилиация, адрес эл. почты."
+
+#: forms.py:23
+msgid "Relevance of the work to the book’s topic"
+msgstr "Соответствие работы тематике книги"
+
+#: forms.py:26
+msgid "Corresponds"
+msgstr "Соответствует"
+
+#: forms.py:27 forms.py:36 forms.py:45 forms.py:72 forms.py:81 forms.py:90
+msgid "Revision is required"
+msgstr "Требуется доработать"
+
+#: forms.py:28 forms.py:37 forms.py:46 forms.py:55 forms.py:64 forms.py:73
+#: forms.py:82 forms.py:91 forms.py:100
+msgid "Other"
+msgstr "Другое"
+
+#: forms.py:29 forms.py:38 forms.py:47 forms.py:56 forms.py:65 forms.py:74
+#: forms.py:83 forms.py:92 forms.py:101
+msgid ""
+"Check option 1 or 2; provide a brief comment on your answer in the "
+"section “other.”"
+msgstr "Отметьте вариант 1 или 2, в разделе другое, пожалуйста, кратко прокомментируйте свое ответ."
+
+#: forms.py:32
+msgid "Rationale for the research goals"
+msgstr "Обоснование  целей исследования"
+
+#: forms.py:35
+msgid "Substantiated"
+msgstr "Обосновано"
+
+#: forms.py:41
+msgid "Are the research goals achieved"
+msgstr "Достигнуты ли цели, поставленные в исследовании"
+
+#: forms.py:44
+msgid "Achieved"
+msgstr "Достигнуты"
+
+#: forms.py:50
+msgid ""
+"Does this work make a significant contribution to the development of the "
+"discipline?"
+msgstr "Вносит ли эта работа  значительный вклад в развитие дисциплины в настоящее время?"
+
+#: forms.py:53 forms.py:62
+msgid "Yes"
+msgstr "Да"
+
+#: forms.py:54 forms.py:63
+msgid "No"
+msgstr "Нет"
+
+#: forms.py:59
+msgid "Relevance of references"
+msgstr "Актуальность источников"
+
+#: forms.py:68
+msgid ""
+"Appropriateness of the methodology / explanation of the methodology: Did "
+"the author use an appropriate methodology? Is the methodology justified?"
+msgstr "Соответствие методологии / объяснение методологии: Использовал ли автор подходящую методологию?  Обоснована ли методология?"
+
+#: forms.py:71
+msgid "The methodology is consistent"
+msgstr "Методология соответствует"
+
+#: forms.py:77
+msgid ""
+"Interpretation of the results: How clearly the results and conclusions "
+"are presented?"
+msgstr "Интерпретация результатов: Насколько ясно представлены результаты и выводы?"
+
+#: forms.py:80
+msgid "The results and conclusions are clear"
+msgstr "Результаты и выводы понятны"
+
+#: forms.py:86
+msgid ""
+"A presentation of the text of the article: Are there any comments on the "
+"style of the text?"
+msgstr "Изложение текста статьи: Есть ли замечания  по стилистике текста?"
+
+#: forms.py:89
+msgid "No comments"
+msgstr "Замечаний нет"
+
+#: forms.py:95
+msgid ""
+"Diagrams, Figures, Illustrations: Were figures, tables, graphs, and "
+"illustrations used where appropriate?"
+msgstr "Графика, рисунки, иллюстрации: были ли использованы рисунки, таблицы, графики и иллюстрации там, где это необходимо?"
+
+#: forms.py:98
+msgid "The use is appropriate"
+msgstr "Использование целесообразно"
+
+#: forms.py:99
+msgid "The use is not appropriate"
+msgstr "Не целесообразно"
+
+#: forms.py:104
+msgid "Comments and suggestions to the book author"
+msgstr "Комментарии и предложения автору"
+
+#: forms.py:108
+msgid "Comments and suggestions to the book editor"
+msgstr "Комментарии и предложения редактору книги"
+
+#: forms.py:112
+msgid "Conclusion"
+msgstr "Заключение"
+
+#: forms.py:114
+msgid "Accept the text as it is"
+msgstr "Принять текст  в нынешнем виде"
+
+#: forms.py:115
+msgid "Accept the text after minor revisions"
+msgstr "Принять текст после незначительной доработки"
+
+#: forms.py:116
+msgid "Revise the text and resubmit it for further review"
+msgstr "Доработать и направить на повторное рецензирование"
+
+#: forms.py:117
+msgid "Reject"
+msgstr "Отклонить"
+
+#: forms.py:116
+msgid "General recommendations"
+msgstr "Общие рекомендации"
+
+#: views.py:51
+msgid "Great! Your review has been sent!"
+msgstr "Отлично! Ваша рецензия была отправлена!"
+
+#: views.py:58
+msgid "Sorry, it looks like something went wrong. Please try again later."
+msgstr "Извините, похоже, что-то пошло не так. Пожалуйста, попробуйте позже."
+
+#: templates/pages/choose-review-language/choose-review-language.html:8
+msgid "Choose a language"
+msgstr "Выберите язык"
+
+#: templates/pages/choose-review-language/choose-review-language.html:13
+msgid "Russian"
+msgstr "Русский"
+
+#: templates/pages/choose-review-language/choose-review-language.html:15
+msgid "English"
+msgstr "Английский"
+
+#: templates/pages/materials/materials.html:8
+msgid "Choose a material"
+msgstr "Выберите материал"
+
+#: templates/pages/review/review-form.html:10
+msgid "Review of a scientific material"
+msgstr "Рецензия на научный материал"
+
+#: templates/pages/review/review-form.html:14
+msgid ""
+"This form is for providing feedback on the scientific material you have "
+"received for review.<br>Please add constructive comments to help the "
+"authors improve their work. The provided recommendations will be "
+"considered by the book editor and forwarded to the authors of the "
+"scientific material and the publisher.<br>Type of review: single-"
+"blind<br>The authors of a scientific material are not provided with "
+"information about reviewers.<br>Please, inform the book editor about any "
+"potential conflict of interest. A conflict of interest includes anything "
+"that might interfere with an unbiased evaluation of the scientific work "
+"being reviewed."
+msgstr "Данная форма предназначена для заполнения отзыва о научном материале, который вы получили на рецензирование.<br> Пожалуйста, добавьте конструктивные комментарии, чтобы помочь автору улучшить свою работу.<br><br> Ваши рекомендации будут учтены редактором книги, переданы авторам научного материала и в Издательство.<br><br> Тип рецензирования: односторонний слепой. <br>Авторам научного материала не предоставляется информация о рецензентах.<br> Пожалуйста, сообщите о любом потенциальном конфликте интересов редактору книги. К конфликту интересов относится все, что может помешать дать непредвзятую оценку научной работе, которую вы рецензируете."

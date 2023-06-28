@@ -1,0 +1,80 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+<table class="table table-bordered table-striped table-hover border-gray-800">
+    <tr>
+        <td>Id</td>
+        <td>Email автора рецензии</td>
+        <td>Информация о рецензенте</td>
+        <td>Соответствие работы тематике книги</td>
+        <td>Обоснование целей исследования</td>
+        <td>Достигнуты ли цели, поставленные в исследовании</td>
+        <td>Вносит ли эта работа вклад в развитие дисциплины в настоящее время?</td>
+        <td>Актуальность источников</td>
+        <td>Соответствие методологии</td>
+        <td>Интерпретация результатов</td>
+        <td>Есть ли замечания по стилистике текста?</td>
+        <td>Графики и иллюстрации там, где это необходимо?</td>
+        <td>Комментарии и предложения автору</td>
+        <td>Комментарии и предложения редактору книги</td>
+        <td>Заключение</td>
+        <td>Общие рекомендации</td>
+        <td>Дата заполнения</td>
+    </tr>
+    {% for review in reviews %}
+    <tr>
+        <td align="left">
+            {{review.id}}
+        </td>
+        <td align="center">
+            {{review.email}}
+        </td>
+        <td align="center">
+            {{review.reviewer_information}}
+        </td>
+        <td align="center">
+            {{review.fits_theme}}
+        </td>
+        <td align="center">
+            {{review.justified}}
+        </td>
+        <td align="center">
+            {{review.goal_reached}}
+        </td>
+        <td align="center">
+            {{review.contribution_was_made}}
+        </td>
+        <td align="center">
+            {{review.relevance_of_sources}}
+        </td>
+        <td align="center">
+            {{review.into_methodology}}
+        </td>
+        <td align="center">
+            {{review.results_are_interpreted}}
+        </td>
+        <td align="center">
+            {{review.presentation_of_text}}
+        </td>
+        <td align="center">
+            {{review.presence_of_graphics}}
+        </td>
+        <td align="center">
+            {{review.comment_for_author}}
+        </td>
+        <td align="center">
+            {{review.comment_for_editor}}
+        </td>
+        <td align="center">
+            {{review.result}}
+        </td>
+        <td align="center">
+            {{review.general_recommendations}}
+        </td>
+        <td align="center">
+            {{review.created_at}}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

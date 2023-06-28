@@ -1,0 +1,68 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+<section class="my-3">
+    <div class="container">
+        <div class="d-grid gap-3">
+            <div class="card">
+                <div class="card-header">
+                    Добавить материал
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <input id="materialTitle" name="materialTitle" type="text"
+                            placeholder="Название материала" autofocus required>
+                        <input type="submit" id="submit" class="btn btn-secondary" value="Добавить">
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Фильтр
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <input id="materialTitle" name="materialTitle" type="text" placeholder="Название материала"
+                            autofocus required>
+                        <input type="submit" class="btn btn-primary" id="submit" value="Поиск">
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Материалы
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-hover border-gray-800">
+                        {% for material in materials %}
+                        <tr>
+                            <td align="center">
+                                <a href="{{url_for('adminReviews', material_id=material.id)}}">{{material.title}}</a>
+                            </td>
+                            <td align="center">
+                                <a href="{{url_for('adminMaterialEdit', material_id=material.id)}}"
+                                    class="btn btn-primary">Редактировать</a>
+                                <a href="{{url_for('adminMaterialDelete', material_id=material.id)}}"
+                                    class="btn btn-danger" onclick="return confirm('Удалить материал?')">Удалить</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function send(view, query) {
+            event.preventDefault();
+            var theUrl = view + "?" + query;
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", theUrl, true); // false for synchronous request
+            xmlHttp.send(null);
+            xmlHttp.onload = () => {
+                return
+            };
+        }
+    </script>
+</section>
+{% endblock content %}

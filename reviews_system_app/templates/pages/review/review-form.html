@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+
+{% from "components/_form-helper.html" import render_field, render_radio_field, render_subfield %}
+
+{% block content %}
+<div class="container" style="max-width: 1000px;">
+    <div class="grid">
+        <div class="card my-4">
+            <div class="card-header">
+                <h1>{{_('Review of a scientific material')}}</h1>
+            </div>
+            <div class="card-body">
+                <p>
+                    {{_("This form is for providing feedback on the scientific material you have received for review.<br>Please add constructive comments to help the authors improve their work. The provided recommendations will be considered by the book editor and forwarded to the authors of the scientific material and the publisher.<br>Type of review: single-blind<br>The authors of a scientific material are not provided with information about reviewers.<br>Please, inform the book editor about any potential conflict of interest. A conflict of interest includes anything that might interfere with an unbiased evaluation of the scientific work being reviewed.")}}
+                </p>
+                <form action="" method="post" class="row gy-4">
+                    {{ reviewForm.csrf_token }}
+                    {{ render_field(reviewForm.email) }}
+                    <hr>
+                    {{ render_field(reviewForm.reviewer_information) }}
+                    <hr>
+                    {{ render_radio_field(reviewForm.fits_theme, onchange="chooseOtherValue(this)") }}
+                    <hr>
+                    {{ render_radio_field(reviewForm.justified, onchange="chooseOtherValue(this)") }}
+                    <hr>
+                    {{ render_radio_field(reviewForm.goal_reached, onchange="chooseOtherValue(this)") }}
+                    <hr>
+                    {{ render_radio_field(reviewForm.contribution_was_made, onchange="chooseOtherValue(this)") }}
+                    <hr>
+                    {{ render_radio_field(reviewForm.relevance_of_sources, onchange="chooseOtherValue(this)") }}
+                    <hr>
+                    {{ render_radio_field(reviewForm.into_methodology, onchange="chooseOtherValue(this)") }}
+                    <hr>
+                    {{ render_radio_field(reviewForm.results_are_interpreted, onchange="chooseOtherValue(this)") }}
+                    <hr>
+                    {{ render_radio_field(reviewForm.presentation_of_text, onchange="chooseOtherValue(this)") }}
+                    <hr>
+                    {{ render_radio_field(reviewForm.presence_of_graphics, onchange="chooseOtherValue(this)") }}
+                    <hr>
+                    {{ render_field(reviewForm.comment_for_author) }}
+                    <hr>
+                    {{ render_field(reviewForm.comment_for_editor) }}
+                    <hr>
+                    {{ render_field(reviewForm.result) }}
+                    <hr>
+                    {{ render_field(reviewForm.general_recommendations) }}
+                    <button type="submit" class="btn btn-primary mx-auto" style="width: max-content;">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function chooseOtherValue(el){
+        for (const iterator of el.children) {
+            if (iterator.firstChild.checked && ((iterator.firstChild.value === 'Other')||(iterator.firstChild.value === 'Другое'))){
+                el.nextElementSibling.disabled = false;
+                el.nextElementSibling.focus();
+                iterator.firstChild.value = '';
+                el.nextElementSibling.onkeyup = ()=>{
+                    iterator.firstChild.value = el.nextElementSibling.value; 
+                }
+            } else {
+                el.children[el.children.length - 1].firstChild.value = el.children[el.children.length - 1].lastChild.textContent;
+                el.nextElementSibling.value = '';
+                el.nextElementSibling.blur();
+                el.nextElementSibling.disabled = true;
+            }
+        }
+    }
+</script>
+{% endblock content %}

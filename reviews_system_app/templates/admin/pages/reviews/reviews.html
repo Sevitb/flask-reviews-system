@@ -1,0 +1,76 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+<section class="my-3">
+    <div class="container">
+
+        <div class="d-grid gap-3">
+            <div class="card">
+                <div class="card-header">
+                    Фильтр
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <input id="materialReviewerEmail" name="materialReviewerEmail" type="text"
+                            placeholder="Email рецензента" autofocus required>
+                        <input type="submit" class="btn btn-primary" id="submit" value="Поиск">
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Рецензии
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h3>Список рецензий для материала: {{material.title}}</h3>
+                        <a href="{{url_for('adminReviewsTable', material_id = material.id)}}"
+                            class="btn btn-primary">Перейти к таблице</a>
+                    </div>
+                    <table class="table table-bordered table-striped table-hover border-gray-800">
+                        <tr>
+                            <td>Id</td>
+                            <td>Email автора рецензии</td>
+                            <td>Информация о рецензенте</td>
+                            <td>Отчет</td>
+                        </tr>
+                        {% for review in reviews %}
+                        <tr>
+                            <td align="left">
+                                {{review.id}}
+                            </td>
+                            </td>
+                            <td align="center">
+                                {{review.email}}
+                            </td>
+                            <td align="center">
+                                {{review.reviewer_information}}
+                            </td>
+                            <td align="center">
+                                <form action="{{url_for('createReport')}}" method="post">
+                                    <input type="hidden" name="review_id" value="{{review.id}}">
+                                    <input type="hidden" name="material_id" value="{{material.id}}">
+                                    <button type="submit" class="btn btn-primary">Сформировать</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    function send(view, query) {
+        event.preventDefault();
+        var theUrl = view + "?" + query;
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", theUrl, true); // false for synchronous request
+        xmlHttp.send(null);
+        xmlHttp.onload = () => {
+            return
+        };
+    }
+</script>
+{% endblock content %}

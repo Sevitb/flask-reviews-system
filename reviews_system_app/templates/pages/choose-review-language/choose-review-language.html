@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="grid">
+        <div class="card">
+            <div class="card-header">
+                <h1>{{ _('Choose a language') }}</h1>
+            </div>
+            <div class="card-body">
+                <div class="mx-auto" style="width: max-content;">
+                    <a href="{{url_for('review',lang='ru',material_id=material_id)}}"
+                        class="btn btn-primary">{{ _('Russian') }}</a>
+                    <a href="{{url_for('review',lang='en',material_id=material_id)}}"
+                        class="btn btn-primary">{{ _('English') }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

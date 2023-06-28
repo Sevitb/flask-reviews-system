@@ -1,0 +1,42 @@
+{% macro render_field(field) %}
+<div>
+    <div class="mb-2">
+        <label class="fw-bold" for="{{field.name}}">{{field.label}}</label>
+        <br>
+        <small class="text-muted">
+            {{field.description}}
+        </small>
+    </div>
+    {{ field(placeholder=field.description.placeholder, class_='form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', **kwargs)|safe }}
+        {% if field.errors %}
+        <ul class="form__error-list">
+            {% for error in field.errors %}
+            <li class="form__error-list-item" >{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+</div>
+{% endmacro %}
+
+{% macro render_radio_field(field, subfield, onclick, onchange) %}
+<div>
+    <div class="mb-2">
+        <label class="fw-bold" for="{{field.name}}">{{field.label}}</label>
+        <br>
+        <small class="text-muted">
+            {{field.description}}
+        </small>
+    </div>
+    {{ field(placeholder=field.description.placeholder,  
+        onclick=onclick, onchange=onchange, class_='form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', **kwargs)|safe }}
+        
+        {% if field.errors %}
+        <ul class="form__error-list">
+            {% for error in field.errors %}
+            <li class="form__error-list-item" >{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <input type="text" name="{{field.name}}" class="form-control mt-2 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" disabled>
+</div>
+{% endmacro %}
