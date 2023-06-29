@@ -24,8 +24,7 @@ class ReviewForm(FlaskForm):
         validators=[DataRequired()], 
         choices=[
             (lazy_gettext('Corresponds'),lazy_gettext('Corresponds')),
-            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required')),
-            (lazy_gettext('Other'),lazy_gettext('Other'))],
+            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required'))],
         description=lazy_gettext(u'Check option 1 or 2; provide a brief comment on your answer in the section “other.”'))
 
     justified = RadioField(
@@ -33,8 +32,7 @@ class ReviewForm(FlaskForm):
         validators=[DataRequired()], 
         choices=[
             (lazy_gettext('Substantiated'),lazy_gettext('Substantiated')),
-            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required')),
-            (lazy_gettext('Other'),lazy_gettext('Other'))],
+            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required'))],
         description=lazy_gettext(u'Check option 1 or 2; provide a brief comment on your answer in the section “other.”'))
 
     goal_reached = RadioField(
@@ -42,8 +40,7 @@ class ReviewForm(FlaskForm):
         validators=[DataRequired()], 
         choices=[
             (lazy_gettext('Achieved'),lazy_gettext('Achieved')),
-            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required')),
-            (lazy_gettext('Other'),lazy_gettext('Other'))],
+            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required'))],
         description=lazy_gettext(u'Check option 1 or 2; provide a brief comment on your answer in the section “other.”'))
 
     contribution_was_made = RadioField(
@@ -51,8 +48,7 @@ class ReviewForm(FlaskForm):
         validators=[DataRequired()], 
         choices=[
             (lazy_gettext('Yes'),lazy_gettext('Yes')),
-            (lazy_gettext('No'),lazy_gettext('No')),
-            (lazy_gettext('Other'),lazy_gettext('Other'))],
+            (lazy_gettext('No'),lazy_gettext('No'))],
         description=lazy_gettext(u'Check option 1 or 2; provide a brief comment on your answer in the section “other.”'))
 
     relevance_of_sources = RadioField(
@@ -60,8 +56,7 @@ class ReviewForm(FlaskForm):
         validators=[DataRequired()], 
         choices=[
             (lazy_gettext('Yes'),lazy_gettext('Yes')),
-            (lazy_gettext('No'),lazy_gettext('No')),
-            (lazy_gettext('Other'),lazy_gettext('Other'))],
+            (lazy_gettext('No'),lazy_gettext('No'))],
         description=lazy_gettext(u'Check option 1 or 2; provide a brief comment on your answer in the section “other.”'))
 
     into_methodology = RadioField(
@@ -69,8 +64,7 @@ class ReviewForm(FlaskForm):
         validators=[DataRequired()], 
         choices=[
             (lazy_gettext('The methodology is consistent'),lazy_gettext('The methodology is consistent')),
-            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required')),
-            (lazy_gettext('Other'),lazy_gettext('Other'))],
+            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required'))],
         description=lazy_gettext(u'Check option 1 or 2; provide a brief comment on your answer in the section “other.”'))
 
     results_are_interpreted = RadioField(
@@ -78,8 +72,7 @@ class ReviewForm(FlaskForm):
         validators=[DataRequired()], 
         choices=[
             (lazy_gettext('The results and conclusions are clear'),lazy_gettext('The results and conclusions are clear')),
-            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required')),
-            (lazy_gettext('Other'),lazy_gettext('Other'))],
+            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required'))],
         description=lazy_gettext(u'Check option 1 or 2; provide a brief comment on your answer in the section “other.”'))
 
     presentation_of_text = RadioField(
@@ -87,8 +80,7 @@ class ReviewForm(FlaskForm):
         validators=[DataRequired()], 
         choices=[
             (lazy_gettext('No comments'),lazy_gettext('No comments')),
-            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required')),
-            (lazy_gettext('Other'),lazy_gettext('Other'))],
+            (lazy_gettext('Revision is required'),lazy_gettext('Revision is required'))],
         description=lazy_gettext(u'Check option 1 or 2; provide a brief comment on your answer in the section “other.”'))
 
     presence_of_graphics = RadioField(
@@ -96,8 +88,7 @@ class ReviewForm(FlaskForm):
         validators=[DataRequired()], 
         choices=[
             (lazy_gettext('The use is appropriate'),lazy_gettext('The use is appropriate')),
-            (lazy_gettext('The use is not appropriate'),lazy_gettext('The use is not appropriate')),
-            (lazy_gettext('Other'),lazy_gettext('Other'))],
+            (lazy_gettext('The use is not appropriate'),lazy_gettext('The use is not appropriate'))],
         description=lazy_gettext(u'Check option 1 or 2; provide a brief comment on your answer in the section “other.”'))
 
     comment_for_author = TextAreaField(

@@ -10,9 +10,10 @@
                     Фильтр
                 </div>
                 <div class="card-body">
-                    <form method="post">
-                        <input id="materialReviewerEmail" name="materialReviewerEmail" type="text"
+                    <form method="get">
+                        <input id="material_reviewer_email" name="material_reviewer_email" type="text"
                             placeholder="Email рецензента" autofocus required>
+                        <input id="material_id" name="material_id" value="{{material.id}}" type="hidden">
                         <input type="submit" class="btn btn-primary" id="submit" value="Поиск">
                     </form>
                 </div>

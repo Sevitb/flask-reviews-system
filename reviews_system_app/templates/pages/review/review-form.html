@@ -19,23 +19,23 @@
                     <hr>
                     {{ render_field(reviewForm.reviewer_information) }}
                     <hr>
-                    {{ render_radio_field(reviewForm.fits_theme, onchange="chooseOtherValue(this)") }}
+                    {{ render_radio_field(reviewForm.fits_theme) }}
                     <hr>
-                    {{ render_radio_field(reviewForm.justified, onchange="chooseOtherValue(this)") }}
+                    {{ render_radio_field(reviewForm.justified) }}
                     <hr>
-                    {{ render_radio_field(reviewForm.goal_reached, onchange="chooseOtherValue(this)") }}
+                    {{ render_radio_field(reviewForm.goal_reached) }}
                     <hr>
-                    {{ render_radio_field(reviewForm.contribution_was_made, onchange="chooseOtherValue(this)") }}
+                    {{ render_radio_field(reviewForm.contribution_was_made) }}
                     <hr>
-                    {{ render_radio_field(reviewForm.relevance_of_sources, onchange="chooseOtherValue(this)") }}
+                    {{ render_radio_field(reviewForm.relevance_of_sources) }}
                     <hr>
-                    {{ render_radio_field(reviewForm.into_methodology, onchange="chooseOtherValue(this)") }}
+                    {{ render_radio_field(reviewForm.into_methodology) }}
                     <hr>
-                    {{ render_radio_field(reviewForm.results_are_interpreted, onchange="chooseOtherValue(this)") }}
+                    {{ render_radio_field(reviewForm.results_are_interpreted) }}
                     <hr>
-                    {{ render_radio_field(reviewForm.presentation_of_text, onchange="chooseOtherValue(this)") }}
+                    {{ render_radio_field(reviewForm.presentation_of_text) }}
                     <hr>
-                    {{ render_radio_field(reviewForm.presence_of_graphics, onchange="chooseOtherValue(this)") }}
+                    {{ render_radio_field(reviewForm.presence_of_graphics) }}
                     <hr>
                     {{ render_field(reviewForm.comment_for_author) }}
                     <hr>
@@ -50,23 +50,4 @@
         </div>
     </div>
 </div>
-<script>
-    function chooseOtherValue(el){
-        for (const iterator of el.children) {
-            if (iterator.firstChild.checked && ((iterator.firstChild.value === 'Other')||(iterator.firstChild.value === 'Другое'))){
-                el.nextElementSibling.disabled = false;
-                el.nextElementSibling.focus();
-                iterator.firstChild.value = '';
-                el.nextElementSibling.onkeyup = ()=>{
-                    iterator.firstChild.value = el.nextElementSibling.value; 
-                }
-            } else {
-                el.children[el.children.length - 1].firstChild.value = el.children[el.children.length - 1].lastChild.textContent;
-                el.nextElementSibling.value = '';
-                el.nextElementSibling.blur();
-                el.nextElementSibling.disabled = true;
-            }
-        }
-    }
-</script>
 {% endblock content %}

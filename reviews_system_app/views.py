@@ -1,3 +1,4 @@
+import json 
 from datetime import datetime
 from reviews_system_app import app, db, babel
 from flask import render_template, request, redirect, url_for, flash
@@ -34,15 +35,42 @@ def review():
             material_id = request.args.get('material_id'),
             email = str(request.form.get('email')),
             reviewer_information = str(request.form.get('reviewer_information')),
-            fits_theme = str(request.form.get('fits_theme')),
-            justified = str(request.form.get('justified')),
-            goal_reached = str(request.form.get('goal_reached')),
-            contribution_was_made = str(request.form.get('contribution_was_made')),
-            relevance_of_sources = str(request.form.get('relevance_of_sources')),
-            into_methodology = str(request.form.get('into_methodology')),
-            results_are_interpreted = str(request.form.get('results_are_interpreted')),
-            presentation_of_text = str(request.form.get('presentation_of_text')),
-            presence_of_graphics = str(request.form.get('presence_of_graphics')),
+            fits_theme = json.dumps({
+                'answer': str(request.form.get('fits_theme')),
+                'comment': str(request.form.get('fits_theme-comment'))
+                }),
+            justified = json.dumps({
+                'answer': str(request.form.get('justified')),
+                'comment': str(request.form.get('justified-comment'))
+                }),
+            goal_reached = json.dumps({
+                'answer': str(request.form.get('goal_reached')),
+                'comment': str(request.form.get('goal_reached-comment'))
+                }),
+            contribution_was_made = json.dumps({
+                'answer': str(request.form.get('contribution_was_made')),
+                'comment': str(request.form.get('contribution_was_made-comment'))
+                }), 
+            relevance_of_sources = json.dumps({
+                'answer': str(request.form.get('relevance_of_sources')),
+                'comment': str(request.form.get('relevance_of_sources-comment'))
+                }), 
+            into_methodology = json.dumps({
+                'answer': str(request.form.get('into_methodology')),
+                'comment': str(request.form.get('into_methodology-comment'))
+                }), 
+            results_are_interpreted = json.dumps({
+                'answer': str(request.form.get('results_are_interpreted')),
+                'comment': str(request.form.get('results_are_interpreted-comment'))
+                }), 
+            presentation_of_text = json.dumps({
+                'answer': str(request.form.get('presentation_of_text')),
+                'comment': str(request.form.get('presentation_of_text-comment'))
+                }), 
+            presence_of_graphics = json.dumps({
+                'answer': str(request.form.get('presence_of_graphics')),
+                'comment': str(request.form.get('presence_of_graphics-comment'))
+                }), 
             comment_for_author = str(request.form.get('comment_for_author')),
             comment_for_editor = str(request.form.get(' comment_for_editor')),
             result = str(request.form.get('result')),

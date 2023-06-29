@@ -21,7 +21,8 @@
         <td>Общие рекомендации</td>
         <td>Дата заполнения</td>
     </tr>
-    {% for review in reviews %}
+    {% for reviewItem in reviews %}
+    {% set review = reviews[reviewItem] %}
     <tr>
         <td align="left">
             {{review.id}}
@@ -33,31 +34,58 @@
             {{review.reviewer_information}}
         </td>
         <td align="center">
-            {{review.fits_theme}}
+            {{review.fits_theme['answer']}}
+            <br>
+            <br>
+            {{review.fits_theme['comment']}}
         </td>
         <td align="center">
-            {{review.justified}}
+            {{review.justified['answer']}}
+            <br>
+            <br>
+            {{review.justified['comment']}}
         </td>
         <td align="center">
-            {{review.goal_reached}}
+            {{review.goal_reached['answer']}}
+            <br>
+            <br>
+            {{review.goal_reached['comment']}}
         </td>
         <td align="center">
-            {{review.contribution_was_made}}
+            {{review.contribution_was_made['answer']}}
+            <br>
+            <br>
+            {{review.contribution_was_made['comment']}}
         </td>
         <td align="center">
-            {{review.relevance_of_sources}}
+            {{review.relevance_of_sources['answer']}}
+            <br>
+            <br>
+            {{review.relevance_of_sources['comment']}}
         </td>
         <td align="center">
-            {{review.into_methodology}}
+            {{review.into_methodology['answer']}}
+            <br>
+            <br>
+            {{review.into_methodology['comment']}}
         </td>
         <td align="center">
-            {{review.results_are_interpreted}}
+            {{review.results_are_interpreted['answer']}}
+            <br>
+            <br>
+            {{review.results_are_interpreted['comment']}}
         </td>
         <td align="center">
-            {{review.presentation_of_text}}
+            {{review.presentation_of_text['answer']}}
+            <br>
+            <br>
+            {{review.presentation_of_text['comment']}}
         </td>
         <td align="center">
-            {{review.presence_of_graphics}}
+            {{review.presence_of_graphics['answer']}}
+            <br>
+            <br>
+            {{review.presence_of_graphics['comment']}}
         </td>
         <td align="center">
             {{review.comment_for_author}}
